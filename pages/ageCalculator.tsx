@@ -5,9 +5,9 @@ const resultFont = Fugaz_One({ weight: "400", subsets: ["latin"] });
 export default function ageCalculator() {
   return (
     <Layout>
-      <div className="bg-gray-50 flex center h-800 justify-center items-center ">
-        <div className="bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg">
-          <form className="w-100 border-b flex relative pb-8 mb-6 rounded-sm">
+      <div className="w-full bg-gray-50 flex center h-800 justify-center items-center ">
+        <div className=" w-full sm:w-[500px] bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg">
+          <form className="border-b flex relative pb-8 mb-6 rounded-sm">
             <label htmlFor="day" className="flex flex-col mr-4 text-xs">
               DAY{" "}
               <input
