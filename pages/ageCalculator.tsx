@@ -1,20 +1,34 @@
 import next from "next";
 import Layout from "./components/layout";
-import { Fugaz_One } from "next/font/google";
-const resultFont = Fugaz_One({ weight: "400", subsets: ["latin"] });
-export default function ageCalculator() {
+import { useState } from "react";
+import AgeResult from "./components/ageResult";
+
+export default function AgeCalculator() {
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [open, setOpen] = useState(false);
+
+  // function submit(value: number, min: number, max: number): boolean {
+
+  // }
+
   return (
     <Layout>
       <div className="w-full bg-gray-50 flex center h-800 justify-center items-center ">
         <div className=" w-full sm:w-[500px] bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg">
+          <h1 className="mb-2 text-sm">출생일을 입력하세요</h1>
           <form className="border-b flex relative pb-8 mb-6 rounded-sm">
             <label htmlFor="day" className="flex flex-col mr-4 text-xs">
-              DAY{" "}
+              DAY
               <input
                 type="text"
                 id="day"
                 required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                autoFocus
+                onChange={(e) => setDay(e.target.value)}
+                value={day}
               />
             </label>
 
@@ -25,6 +39,8 @@ export default function ageCalculator() {
                 id="month"
                 required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                onChange={(e) => setMonth(e.target.value)}
+                value={month}
               />
             </label>
 
@@ -35,9 +51,16 @@ export default function ageCalculator() {
                 id="year"
                 required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                onChange={(e) => setYear(e.target.value)}
+                value={year}
               />
             </label>
-            <button className="rounded-full p-3 bg-violet-600 hover:bg-violet-700 text-white absolute right-4 bottom-[-30px] hover:animate-bounce">
+            <button
+              className="rounded-full p-3 bg-violet-600 hover:bg-violet-700 text-white absolute right-4 bottom-[-30px] hover:animate-bounce"
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -52,15 +75,21 @@ export default function ageCalculator() {
               </svg>
             </button>
           </form>
-          <p className={`text-3xl text-black ${resultFont.className}`}>
-            <span className="text-violet-600">{23}</span>YEARS
-          </p>
-          <p className={`text-3xl text-black ${resultFont.className}`}>
-            <span className="text-violet-600">{23}</span>MONTHS
-          </p>
-          <p className={`text-3xl text-black ${resultFont.className}`}>
-            <span className="text-violet-600">{23}</span>DAYS
-          </p>
+          {open && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close">&times;</span>
+                <p>안내창 내용을 작성하세요.{day}</p>
+              </div>
+            </div>
+          )}
+          {/* {open && (
+            <AgeResult
+              year={Number(year)}
+              month={Number(month)}
+              day={Number(day)}
+            />
+          )} */}
         </div>
       </div>
     </Layout>
