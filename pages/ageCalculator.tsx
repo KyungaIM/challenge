@@ -1,30 +1,54 @@
 import next from "next";
 import Layout from "./components/layout";
 import { useState } from "react";
-import AgeResult from "./components/ageResult";
+import { Fugaz_One } from "next/font/google";
+const resultFont = Fugaz_One({ weight: "400", subsets: ["latin"] });
 
 export default function AgeCalculator() {
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState("");
+  const [modalValue, setModalValue] = useState([0, 0, 0]);
 
-  // function submit(value: number, min: number, max: number): boolean {
+  const validation = () => {
+    const dayNum = Number(day);
+    const monthNum = Number(month);
+    const yearNum = Number(year);
+    const lastDay = new Date(Number(year), Number(month), 0).getDate();
+    const currentYear = new Date().getFullYear();
 
-  // }
+    if (0 === dayNum || dayNum > lastDay) {
+      setError("알맞은 날짜를 입력하세요");
+      return;
+    }
+    if (monthNum > 12) {
+      setError("알맞은 달을 입력하세요");
+      return;
+    }
+    if (yearNum > currentYear) {
+      setError("알맞은 연도를 입력하세요");
+      return;
+    }
+    setError("");
+    return true;
+  };
 
   return (
     <Layout>
       <div className="w-full bg-gray-50 flex center h-800 justify-center items-center ">
-        <div className=" w-full sm:w-[500px] bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className=" w-full sm:w-[500px] bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg"
+        >
           <h1 className="mb-2 text-sm">출생일을 입력하세요</h1>
-          <form className="border-b flex relative pb-8 mb-6 rounded-sm">
+          <div className="border-b flex relative pb-8 mb-6 rounded-sm">
             <label htmlFor="day" className="flex flex-col mr-4 text-xs">
               DAY
               <input
                 type="text"
                 id="day"
-                required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
                 autoFocus
                 onChange={(e) => setDay(e.target.value)}
@@ -37,7 +61,6 @@ export default function AgeCalculator() {
               <input
                 type="text"
                 id="month"
-                required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
                 onChange={(e) => setMonth(e.target.value)}
                 value={month}
@@ -49,7 +72,6 @@ export default function AgeCalculator() {
               <input
                 type="text"
                 id="year"
-                required
                 className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
                 onChange={(e) => setYear(e.target.value)}
                 value={year}
@@ -58,7 +80,33 @@ export default function AgeCalculator() {
             <button
               className="rounded-full p-3 bg-violet-600 hover:bg-violet-700 text-white absolute right-4 bottom-[-30px] hover:animate-bounce"
               onClick={() => {
-                setOpen(true);
+                if (day && month && year) {
+                  if (validation()) {
+                    // 특정 날짜와 오늘 날짜 생성
+                    const fromDate = new Date(`${year}-${month}-${day}`);
+                    const today = new Date();
+
+                    // 시간차 계산
+                    const timeDiff = Math.abs(
+                      today.getTime() - fromDate.getTime()
+                    );
+                    const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                    // 연월일 계산
+                    const years = Math.floor(diffDays / 365);
+                    const months = Math.floor((diffDays % 365) / 30);
+                    const days = (diffDays % 365) % 30;
+
+                    setModalValue([days, months, years]);
+                    setDay("");
+                    setMonth("");
+                    setYear("");
+                    setOpen(true);
+                    setError("");
+                  }
+                } else {
+                  setError("입력란을 모두 입력해주세요");
+                }
               }}
             >
               <svg
@@ -74,23 +122,24 @@ export default function AgeCalculator() {
                 />
               </svg>
             </button>
-          </form>
+            <p className="absolute left-0 bottom-2 text-xs text-slate-400">
+              {error && error}
+            </p>
+          </div>
           {open && (
-            <div className="modal">
-              <div className="modal-content">
-                <span className="close">&times;</span>
-                <p>안내창 내용을 작성하세요.{day}</p>
-              </div>
+            <div>
+              <p className={`text-3xl text-black ${resultFont.className}`}>
+                <span className="text-violet-600">{modalValue[2]}</span>YEARS
+              </p>
+              <p className={`text-3xl text-black ${resultFont.className}`}>
+                <span className="text-violet-600">{modalValue[1]}</span>MONTHS
+              </p>
+              <p className={`text-3xl text-black ${resultFont.className}`}>
+                <span className="text-violet-600">{modalValue[0]}</span>DAYS
+              </p>
             </div>
           )}
-          {/* {open && (
-            <AgeResult
-              year={Number(year)}
-              month={Number(month)}
-              day={Number(day)}
-            />
-          )} */}
-        </div>
+        </form>
       </div>
     </Layout>
   );
