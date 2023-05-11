@@ -64,7 +64,7 @@ export default function Notification() {
         <div className="flex justify-between mb-4">
           <h1 className="font-bold text-lg">
             Notification
-            <span className="p-1 px-2 rounded bg-cyan-600 text-white text-sm ml-3">
+            <span className="p-1 px-2 rounded bg-blue-500 text-white text-sm ml-3">
               {data.filter((el) => el.new === true).length}
             </span>
           </h1>

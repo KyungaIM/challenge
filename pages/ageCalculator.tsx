@@ -78,7 +78,7 @@ export default function AgeCalculator() {
               />
             </label>
             <button
-              className="rounded-full p-3 bg-violet-600 hover:bg-violet-700 text-white absolute right-4 bottom-[-30px] hover:animate-bounce"
+              className="rounded-full p-3 bg-blue-500 hover:bg-blue-700 text-white absolute right-4 bottom-[-30px] hover:animate-bounce"
               onClick={() => {
                 if (day && month && year) {
                   if (validation()) {
@@ -105,7 +105,7 @@ export default function AgeCalculator() {
                     setError("");
                   }
                 } else {
-                  setError("입력란을 모두 입력해주세요");
+                  setError("입력란을 모두 채워주세요");
                 }
               }}
             >
@@ -129,13 +129,13 @@ export default function AgeCalculator() {
           {open && (
             <div>
               <p className={`text-3xl text-black ${resultFont.className}`}>
-                <span className="text-violet-600">{modalValue[2]}</span>YEARS
+                <span className="text-blue-500">{modalValue[2]}</span>YEARS
               </p>
               <p className={`text-3xl text-black ${resultFont.className}`}>
-                <span className="text-violet-600">{modalValue[1]}</span>MONTHS
+                <span className="text-blue-500">{modalValue[1]}</span>MONTHS
               </p>
               <p className={`text-3xl text-black ${resultFont.className}`}>
-                <span className="text-violet-600">{modalValue[0]}</span>DAYS
+                <span className="text-blue-500">{modalValue[0]}</span>DAYS
               </p>
             </div>
           )}

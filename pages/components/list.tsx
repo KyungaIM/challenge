@@ -16,9 +16,11 @@ export default function List() {
             <h2 className="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
               JUNIOR
             </h2>
-            <h1 className="title-font text-xl font-medium text-gray-900 mb-3">
-              Notifications page
-            </h1>
+            <Link href={"/notification"}>
+              <h1 className="title-font text-xl font-medium text-gray-900 mb-3 hover:text-gray-700">
+                Notifications page
+              </h1>
+            </Link>
             <ul className="leading-relaxed mb-5">
               <li> - 읽은 상태와 읽지 않은 상태를 구분합니다</li>
               <li>
@@ -27,23 +29,6 @@ export default function List() {
               <li>- 반응형 페이지로 구현합니다</li>
               <li>- hover 및 focus에 인터랙션 요소를 추가합니다</li>
             </ul>
-            <Link href={"/notification"} className="flex">
-              바로가기
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 -4 26 26"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
@@ -61,32 +46,17 @@ export default function List() {
             <h2 className="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
               JUNIOR
             </h2>
-            <h1 className="title-font text-xl font-medium text-gray-900 mb-3">
-              age calculator
-            </h1>
+            <Link href={"/ageCalculator"}>
+              <h1 className="title-font text-xl font-medium text-gray-900 mb-3 hover:text-gray-700">
+                age calculator
+              </h1>
+            </Link>
             <ul className="leading-relaxed mb-5">
               <li> - 태어난 이후로 몇년 몇월 며칠이 지났는지 계산합니다</li>
               <li>- 유효성검사를 실행합니다</li>
               <li>- 31일 없는 달을 구분합니다</li>
               <li>- year에는 현재 연도보다 이전 연도만 들어갈 수 있습니다</li>
             </ul>
-            <Link href={"/ageCalculator"} className="flex">
-              바로가기
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 -4 26 26"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
@@ -102,15 +72,17 @@ export default function List() {
           </div>
           <div className="flex-grow pl-6">
             <h2 className="tracking-widest text-xs title-font font-medium text-blue-500 mb-1">
-              CATEGORY
+              NEWBIE
             </h2>
-            <h1 className="title-font text-xl font-medium text-gray-900 mb-3">
-              Neptune
-            </h1>
-            <p className="leading-relaxed mb-5">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
+            <Link href={"/accordion"}>
+              <h1 className="title-font text-xl font-medium text-gray-900 mb-3 hover:text-gray-700">
+                FAQ accordion card
+              </h1>
+            </Link>
+            <ul className="leading-relaxed mb-5">
+              <li> -아코디언 메뉴를 구현합니다</li>
+              <li> -js를 사용하지 않고 구현합니다</li>
+            </ul>
           </div>
         </div>
       </div>
