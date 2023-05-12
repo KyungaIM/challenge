@@ -15,5 +15,12 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+@layer components {
+  .card {
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
+  }
+}
 

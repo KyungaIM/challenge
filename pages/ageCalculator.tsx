@@ -1,5 +1,5 @@
 import next from "next";
-import Layout from "./components/layout";
+import Layout from "./components/layout/layout";
 import { useState } from "react";
 import { Fugaz_One } from "next/font/google";
 const resultFont = Fugaz_One({ weight: "400", subsets: ["latin"] });
