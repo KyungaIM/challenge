@@ -40,4 +40,14 @@ export const listData = [
     ],
     link: "/ResultSummary",
   },
+  {
+    date: "2023-05-13",
+    level: "newbie",
+    title: "Interactive rating component",
+    functions: [
+      "확인 버튼을 누르면 화면이 전환됩니다",
+      "hover 및 focus에 인터랙션 요소를 추가합니다",
+    ],
+    link: "/rating",
+  },
 ];

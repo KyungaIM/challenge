@@ -13,25 +13,25 @@ export default function ResultSummary() {
     <Layout>
       <div className="md:flex md:justify-center">
         <div className="card md:w-[600px] p-0 md:flex">
-          <div className="card bg-gradient-to-r from-sky-500 to-blue-500 md:w-1/2 text-white text-center md:flex md:flex-col md:justify-center">
+          <div className="text-center text-white card bg-gradient-to-r from-sky-500 to-blue-500 md:w-1/2 md:flex md:flex-col md:justify-center">
             <h1 className="text-lg">Your Result</h1>
-            <div className="rounded-full bg-gradient-to-b from-blue-800 inline-block p-4 w-24 h-24 m-2 mx-auto">
-              <p className="text-4xl mt-1">{Math.floor(myAverage)}</p>
+            <div className="inline-block w-24 h-24 p-4 m-2 mx-auto rounded-full bg-gradient-to-b from-blue-800">
+              <p className="mt-1 text-4xl">{Math.floor(myAverage)}</p>
               <p className="text-xs opacity-60">of 100</p>
             </div>
             <div>
-              <p className="text-lg mt-2">Great!</p>
+              <p className="mt-2 text-lg">Great!</p>
               <p className="text-sm max-w-[300px] m-auto mb-2 opacity-80">
                 you scored higher than 65% of the people who have taken thede
                 tests.
               </p>
             </div>
           </div>
-          <div className="p-4 flex flex-col items-center m-4 md:w-1/2">
-            <h1 className="my-4 text-lg text-gray-500 font-semibold">
+          <div className="flex flex-col items-center p-4 m-4 md:w-1/2">
+            <h1 className="my-4 text-lg font-semibold text-gray-500">
               Summmary
             </h1>
-            <div className="flex bg-red-50 rounded-xl w-full mb-2 p-3 justify-between">
+            <div className="flex justify-between w-full p-3 mb-2 bg-red-50 rounded-xl">
               <h2 className="flex text-red-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +50,11 @@ export default function ResultSummary() {
                 Reaction
               </h2>
               <p className="text-gray-400">
-                <span className="text-gray-600 font-bold">{data.action}</span> /
+                <span className="font-bold text-gray-600">{data.action}</span> /
                 100
               </p>
             </div>
-            <div className="flex bg-yellow-50 rounded-xl w-full mb-2 p-3 justify-between">
+            <div className="flex justify-between w-full p-3 mb-2 bg-yellow-50 rounded-xl">
               <h2 className="flex text-yellow-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,11 +73,11 @@ export default function ResultSummary() {
                 Memory
               </h2>
               <p className="text-gray-400">
-                <span className="text-gray-600 font-bold">{data.memory}</span> /
+                <span className="font-bold text-gray-600">{data.memory}</span> /
                 100
               </p>
             </div>
-            <div className="flex bg-green-50 rounded-xl w-full mb-2 p-3 justify-between">
+            <div className="flex justify-between w-full p-3 mb-2 bg-green-50 rounded-xl">
               <h2 className="flex text-green-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +96,11 @@ export default function ResultSummary() {
                 Verbal
               </h2>
               <p className="text-gray-400">
-                <span className="text-gray-600 font-bold">{data.verbal}</span> /
+                <span className="font-bold text-gray-600">{data.verbal}</span> /
                 100
               </p>
             </div>
-            <div className="flex bg-sky-50 rounded-xl w-full mb-2 p-3 justify-between">
+            <div className="flex justify-between w-full p-3 mb-2 bg-sky-50 rounded-xl">
               <h2 className="flex text-sky-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ export default function ResultSummary() {
                 Visual
               </h2>
               <p className="text-gray-400">
-                <span className="text-gray-600 font-bold">{data.visual}</span> /
+                <span className="font-bold text-gray-600">{data.visual}</span> /
                 100
               </p>
             </div>
