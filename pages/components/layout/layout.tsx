@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Header />
       <main>
         <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">{children}</div>
+          <div className="container px-5 py-20 mx-auto">{children}</div>
         </section>
       </main>
       <Footer />

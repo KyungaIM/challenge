@@ -1,6 +1,8 @@
 import Layout from "./components/layout/layout";
 import NotificationItem from "./components/notificationItem";
 import { useState } from "react";
+import PostHead from "./components/PostHead";
+import { listData } from "./components/main/listdata";
 
 export default function Notification() {
   const mock = [
@@ -60,11 +62,16 @@ export default function Notification() {
   };
   return (
     <Layout>
+      <PostHead
+        title={listData[0].title}
+        image={listData[0].image}
+        functions={listData[0].functions}
+      />
       <main>
         <div className="flex justify-between mb-4">
-          <h1 className="font-bold text-lg">
+          <h1 className="text-lg font-bold">
             Notification
-            <span className="p-1 px-2 rounded bg-blue-500 text-white text-sm ml-3">
+            <span className="p-1 px-2 ml-3 text-sm text-white bg-blue-500 rounded">
               {data.filter((el) => el.new === true).length}
             </span>
           </h1>

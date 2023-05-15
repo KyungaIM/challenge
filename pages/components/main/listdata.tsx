@@ -10,6 +10,7 @@ export const listData = [
       "hover 및 focus에 인터랙션 요소를 추가합니다",
     ],
     link: "/notification",
+    image: "/notification.png",
   },
   {
     date: "2023-05-05",
@@ -22,6 +23,7 @@ export const listData = [
       "year에는 현재 연도보다 이전 연도만 들어갈 수 있습니다",
     ],
     link: "/ageCalculator",
+    image: "/ageCalculator.png",
   },
   {
     date: "2023-05-11",
@@ -29,6 +31,7 @@ export const listData = [
     title: "FAQ accordion card",
     functions: ["아코디언 메뉴를 구현합니다", "js를 사용하지 않고 구현합니다"],
     link: "/accordion",
+    image: "/accordion.png",
   },
   {
     date: "2023-05-12",
@@ -39,6 +42,7 @@ export const listData = [
       "hover 및 focus에 인터랙션 요소를 추가합니다",
     ],
     link: "/ResultSummary",
+    image: "/resultSummary.png",
   },
   {
     date: "2023-05-13",
@@ -49,5 +53,17 @@ export const listData = [
       "hover 및 focus에 인터랙션 요소를 추가합니다",
     ],
     link: "/rating",
+    image: "/rating.png",
+  },
+  {
+    date: "2023-05-15",
+    level: "newbie",
+    title: "Intro component with sign-up form",
+    functions: [
+      "인풋창이 비었을 때 에러메세지를 출력합니다",
+      "이메일 주소형식이 틀렸을 때 에러메세지를 출력합니다",
+    ],
+    link: "/signupForm",
+    image: "/signupForm.png",
   },
 ];

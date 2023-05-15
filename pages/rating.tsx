@@ -27,7 +27,7 @@ export default function Rating() {
                 setRate(0);
                 setFinish(false);
               }}
-              className="block w-full p-2 mt-4 bg-blue-500 rounded-full hover:bg-white hover:text-blue-500 active:bg-blue-100"
+              className="button"
             >
               다시 평가하기
             </button>
@@ -70,7 +70,7 @@ export default function Rating() {
               onClick={() => {
                 if (rateNum) setFinish(true);
               }}
-              className="block w-full p-2 mt-4 bg-blue-500 rounded-full hover:bg-white hover:text-blue-500 active:bg-blue-100"
+              className="button"
             >
               제출하기
             </button>

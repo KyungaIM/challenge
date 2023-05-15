@@ -2,6 +2,8 @@ import next from "next";
 import Layout from "./components/layout/layout";
 import { useState } from "react";
 import { Fugaz_One } from "next/font/google";
+import { listData } from "./components/main/listdata";
+import PostHead from "./components/PostHead";
 const resultFont = Fugaz_One({ weight: "400", subsets: ["latin"] });
 
 export default function AgeCalculator() {
@@ -37,19 +39,24 @@ export default function AgeCalculator() {
 
   return (
     <Layout>
-      <div className="w-full bg-gray-50 flex center h-800 justify-center items-center ">
+      <PostHead
+        title={listData[1].title}
+        image={listData[1].image}
+        functions={listData[1].functions}
+      />
+      <div className="flex items-center justify-center w-full bg-gray-50 center h-800 ">
         <form
           onSubmit={(e) => e.preventDefault()}
           className=" w-full sm:w-[500px] bg-white p-8 my-10 rounded-lg rounded-br-[50px] drop-shadow-lg"
         >
           <h1 className="mb-2 text-sm">출생일을 입력하세요</h1>
-          <div className="border-b flex relative pb-8 mb-6 rounded-sm">
+          <div className="relative flex pb-8 mb-6 border-b rounded-sm">
             <label htmlFor="day" className="flex flex-col mr-4 text-xs">
               DAY
               <input
                 type="text"
                 id="day"
-                className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                className="w-20 px-2 py-1 mt-1 text-lg font-bold border "
                 autoFocus
                 onChange={(e) => setDay(e.target.value)}
                 value={day}
@@ -61,7 +68,7 @@ export default function AgeCalculator() {
               <input
                 type="text"
                 id="month"
-                className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                className="w-20 px-2 py-1 mt-1 text-lg font-bold border "
                 onChange={(e) => setMonth(e.target.value)}
                 value={month}
               />
@@ -72,7 +79,7 @@ export default function AgeCalculator() {
               <input
                 type="text"
                 id="year"
-                className=" border w-20 px-2 py-1 mt-1 text-lg font-bold"
+                className="w-20 px-2 py-1 mt-1 text-lg font-bold border "
                 onChange={(e) => setYear(e.target.value)}
                 value={year}
               />
@@ -122,7 +129,7 @@ export default function AgeCalculator() {
                 />
               </svg>
             </button>
-            <p className="absolute left-0 bottom-2 text-xs text-slate-400">
+            <p className="absolute left-0 text-xs bottom-2 text-slate-400">
               {error && error}
             </p>
           </div>
