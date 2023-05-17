@@ -11,7 +11,7 @@ export default function NotificationItem({ el }: { el: Item }) {
   return (
     <div
       className={`
-      ${el.new ? "bg-blue-50 hover:bg-blue-100" : "hover:bg-gray-50"}
+      ${el?.new ? "bg-blue-50 hover:bg-blue-100" : "hover:bg-gray-50"}
     flex p-4 m-1 rounded `}
     >
       <div className="w-8 h-8 mt-1 mr-3 truncate rounded-full">
