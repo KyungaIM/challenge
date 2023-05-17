@@ -1,5 +1,5 @@
 import Layout from "./components/layout/layout";
-import { listData } from "./components/main/listdata";
+import { listData } from "../data/listdata";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";

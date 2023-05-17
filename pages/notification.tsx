@@ -2,7 +2,7 @@ import Layout from "./components/layout/layout";
 import NotificationItem from "./components/notificationItem";
 import { useState } from "react";
 import PostHead from "./components/PostHead";
-import { listData } from "./components/main/listdata";
+import { listData } from "../data/listdata";
 
 export default function Notification() {
   const mock = [
