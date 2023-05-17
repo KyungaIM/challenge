@@ -72,14 +72,14 @@ export default function Notification() {
           <h1 className="text-lg font-bold">
             Notification
             <span className="p-1 px-2 ml-3 text-sm text-white bg-blue-500 rounded">
-              {data.filter((el) => el.new === true).length}
+              {data?.filter((el) => el.new === true).length}
             </span>
           </h1>
           <div>
             <button onClick={readAll}>모두 읽음</button>
           </div>
         </div>
-        {data.map((el, index) => {
+        {data?.map((el, index) => {
           return <NotificationItem el={el} key={index} />;
         })}
       </main>
