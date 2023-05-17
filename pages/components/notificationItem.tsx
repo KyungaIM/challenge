@@ -15,15 +15,15 @@ export default function NotificationItem({ el }: { el: Item }) {
     flex p-4 m-1 rounded `}
     >
       <div className="w-8 h-8 mt-1 mr-3 truncate rounded-full">
-        <Image src={el.img} alt="유저이미지" width="40" height="40" />
+        <Image src={el?.img} alt="유저이미지" width="40" height="40" />
       </div>
       <div>
         <div>
-          <span className="font-bold">{el.name}</span>
-          {" " + el.info}
+          <span className="font-bold">{el?.name}</span>
+          {" " + el?.info}
         </div>
         <div className="text-sm text-gray-400">
-          {getTimeSince(el.date) + "전"}
+          {getTimeSince(el?.date) + "전"}
         </div>
       </div>
     </div>
